@@ -1,0 +1,8 @@
+#! /bin/bash
+%= $global->{warning}
+
+if [ -f cpanfile ]; then
+  cpanm --installdeps .
+fi
+
+exec "$@"
