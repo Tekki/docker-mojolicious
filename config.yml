@@ -1,0 +1,52 @@
+---
+
+docker:
+  image: tekki/mojolicious
+
+global:
+  app_folder: /usr/src/app
+  mojo_version: 8.09
+  perl_modules:
+    - Cpanel::JSON::XS
+    - DBI
+    - EV
+    - IO::Socket::Socks
+    - IO::Socket::SSL
+    - Net::DNS::Native
+    - Role::Tiny
+    - SQL::Abstract
+
+releases:
+  main:
+    latest: true
+    version: 8.09
+  mariadb:
+    keyservers:
+      - key: 0xcbcb082a1bb943db
+        server: hkp://keyserver.ubuntu.com:80
+    packages:
+      - libmariadb-dev
+      - mariadb-client
+    perl_modules:
+      - DBD::MariaDB
+    repos:
+      - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
+    version: 8.09-mariadb
+  mysql:
+    keyservers:
+      - key: 5072E1F5
+        server: http://pgp.mit.edu
+    packages:
+      - libmysqlclient-dev
+      - mysql-client
+    perl_modules:
+      - DBD::mysql
+    repos:
+      - deb http://repo.mysql.com/apt/debian/ stretch mysql-8.0
+    version: 8.09-mysql
+
+templates:
+  - source: dockerfile.ep
+    target: Dockerfile
+  - source: docker-entrypoint-sh.ep
+    target: docker-entrypoint.sh
