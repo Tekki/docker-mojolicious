@@ -5,7 +5,7 @@ docker:
 
 global:
   app_folder: /usr/src/app
-  mojo_version: 8.09
+  mojo_version: 8.10
   perl_modules:
     - Cpanel::JSON::XS
     - DBI
@@ -19,7 +19,7 @@ global:
 releases:
   main:
     latest: true
-    version: 8.09
+    version: 8.10
   mariadb:
     keyservers:
       - key: 0xcbcb082a1bb943db
@@ -31,7 +31,7 @@ releases:
       - DBD::MariaDB
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
-    version: 8.09-mariadb
+    version: 8.10-mariadb
   mysql:
     keyservers:
       - key: 5072E1F5
@@ -43,7 +43,7 @@ releases:
       - DBD::mysql
     repos:
       - deb http://repo.mysql.com/apt/debian/ stretch mysql-8.0
-    version: 8.09-mysql
+    version: 8.10-mysql
 
 templates:
   - source: dockerfile.ep

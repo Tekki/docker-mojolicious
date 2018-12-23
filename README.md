@@ -17,11 +17,11 @@ All the images come with Mojolicious installed together with
 
 # Supported tags and respective Dockerfile links
 
-* Mojolicious: [8.09, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile).
+* Mojolicious: [8.10, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile).
 
-* Mojolicious with DBD::MariaDB: [8.09-mariadb, latest (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile).
+* Mojolicious with DBD::MariaDB: [8.10-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile).
 
-* Mojolicious with DBD::mysql: [8.09-mysql, latest (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile).
+* Mojolicious with DBD::mysql: [8.10-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile).
 
 # How to use this image
 

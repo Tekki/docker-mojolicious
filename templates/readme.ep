@@ -21,9 +21,9 @@ All the images come with Mojolicious installed together with
 
 * Mojolicious: [<%= $main->{version} %>, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile).
 
-* Mojolicious with DBD::MariaDB: [<%= $mariadb->{version} %>, latest (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile).
+* Mojolicious with DBD::MariaDB: [<%= $mariadb->{version} %>, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile).
 
-* Mojolicious with DBD::mysql: [<%= $mysql->{version} %>, latest (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile).
+* Mojolicious with DBD::mysql: [<%= $mysql->{version} %>, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile).
 
 # How to use this image
 
