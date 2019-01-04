@@ -1,12 +1,13 @@
-%= $global->{warning}
+%= $warning
 
 FROM perl:5.28
 
 RUN set -e; \\
     mkdir -p <%= $global->{app_folder} %>; \\
     apt-get update && apt-get install -y --no-install-recommends \\
-    software-properties-common \\
-    dirmngr \\
+% for ($global->{debian_packages}->@*) {
+    <%= $_ %> \\
+% }
     && rm -r /var/lib/apt/lists/*
 
 RUN set -e; \\
@@ -16,11 +17,16 @@ ENV MOJO_VERSION <%= $global->{mojo_version} %>
 
 RUN cpanm Mojolicious@"$MOJO_VERSION"
 
-% if ($release->{keyservers}) {
-ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE 1
-%   for my $keyserver ($release->{keyservers}->@*) {
-RUN apt-key adv --no-tty --keyserver <%= $keyserver->{server} %> --recv-keys <%= $keyserver->{key} %>
+% if ($release->{keys}) {
+RUN set -e; \\
+    export GNUPGHOME="$(mktemp -d)"; \\
+%   for my $key ($release->{keys}->@*) {
+    gpg --batch --keyserver <%= $release->{keyserver} %> --recv-keys "<%= $key %>"; \\
 %   }
+    gpg --batch --export <%= join ' ', $release->{keys}->@* %> > /etc/apt/trusted.gpg.d/<%= $release_name %>.gpg; \\
+    command -v gpgconf > /dev/null && gpgconf --kill all; \\
+    rm -rf "$GNUPGHOME"; \\
+    apt-key list
 
 % }
 % if ($release->{repos}) {
@@ -33,7 +39,7 @@ RUN set -e; \\
 % }
 % if ($release->{packages}) {
 RUN set -e; \\
-    apt-get install -y --no-install-recommends --allow-unauthenticated \\
+    apt-get install -y --no-install-recommends \\
 %   for my $package ($release->{packages}->@*) {
     <%= $package %> \\
 %   }
@@ -47,8 +53,8 @@ RUN cpanm <%= join ' ', $release->{perl_modules}->@* %>
 WORKDIR <%= $global->{app_folder} %>
 EXPOSE 3000 8080
 
-# COPY docker-entrypoint.sh /usr/local/bin
-# RUN chmod 0755 /usr/local/bin/docker-entrypoint.sh
-# ENTRYPOINT ["docker-entrypoint.sh"]
+COPY docker-entrypoint.sh /usr/local/bin
+RUN chmod 0755 /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD ["/bin/bash", "-c"]

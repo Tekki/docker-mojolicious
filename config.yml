@@ -1,11 +1,16 @@
 ---
-
 docker:
   image: tekki/mojolicious
 
+git:
+  repo: https://github.com/Tekki/docker-mojolicious
+
 global:
   app_folder: /usr/src/app
-  mojo_version: 8.10
+  debian_packages:
+    - software-properties-common
+    - dirmngr
+  mojo_version: 8.11
   perl_modules:
     - Cpanel::JSON::XS
     - DBI
@@ -19,31 +24,57 @@ global:
 releases:
   main:
     latest: true
-    version: 8.10
+    versions:
+      - 8.11
+      - 8
   mariadb:
-    keyservers:
-      - key: 0xcbcb082a1bb943db
-        server: hkp://keyserver.ubuntu.com:80
+    keys:
+      - 177F4010FE56CA3336300305F1656F24C74CD1D8
+      - 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A
+      - 4D1BB29D63D98E422B2113B19334A25F8507EFA5
+    keyserver: keyserver.ubuntu.com
     packages:
       - libmariadb-dev
-      - mariadb-client
     perl_modules:
       - DBD::MariaDB
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
-    version: 8.10-mariadb
+    versions:
+      - 8.11-mariadb
+      - 8-mariadb
   mysql:
-    keyservers:
-      - key: 5072E1F5
-        server: http://pgp.mit.edu
+    keys:
+      - A4A9406876FCBD3C456770C88C718D3B5072E1F5
     packages:
       - libmysqlclient-dev
-      - mysql-client
     perl_modules:
       - DBD::mysql
+      - Mojo::mysql
     repos:
       - deb http://repo.mysql.com/apt/debian/ stretch mysql-8.0
-    version: 8.10-mysql
+    versions:
+      - 8.11-mysql
+      - 8-mysql
+  pg:
+    keys:
+      - B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+    packages:
+      - libpq-dev
+    perl_modules:
+      - DBD::Pg
+      - Mojo::Pg
+    repos:
+      - deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main 11
+    versions:
+      - 8.11-pg
+      - 8-pg
+  sqlite:
+    perl_modules:
+      - DBD::SQLite
+      - Mojo::SQLite
+    versions:
+      - 8.11-sqlite
+      - 8-sqlite
 
 templates:
   - source: dockerfile.ep

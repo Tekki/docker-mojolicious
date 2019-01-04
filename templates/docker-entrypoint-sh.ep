@@ -1,5 +1,5 @@
 #! /bin/bash
-%= $global->{warning}
+%= $warning
 
 if [ -f cpanfile ]; then
   cpanm --installdeps .

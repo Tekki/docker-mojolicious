@@ -16,15 +16,15 @@ RUN set -e; \
 RUN set -e; \
     cpanm Cpanel::JSON::XS DBI EV IO::Socket::Socks IO::Socket::SSL Net::DNS::Native Role::Tiny SQL::Abstract
 
-ENV MOJO_VERSION 8.10
+ENV MOJO_VERSION 8.11
 
 RUN cpanm Mojolicious@"$MOJO_VERSION"
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
 
-# COPY docker-entrypoint.sh /usr/local/bin
-# RUN chmod 0755 /usr/local/bin/docker-entrypoint.sh
-# ENTRYPOINT ["docker-entrypoint.sh"]
+COPY docker-entrypoint.sh /usr/local/bin
+RUN chmod 0755 /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD ["/bin/bash", "-c"]
