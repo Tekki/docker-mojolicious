@@ -17,15 +17,15 @@ All the images come with Mojolicious installed together with
 
 # Supported tags and respective Dockerfile links
 
-* Mojolicious: [8.11, 8, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile)
+* Mojolicious: [8.12, 8, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile)
 
-* Mojolicious with DBD::MariaDB (__experimental!__): [8.11-mariadb, 8-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile)
+* Mojolicious with DBD::MariaDB (__experimental!__): [8.12-mariadb, 8-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile)
 
-* Mojolicious with Mojo::mysql and DBD::mysql: [8.11-mysql, 8-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile)
+* Mojolicious with Mojo::mysql and DBD::mysql: [8.12-mysql, 8-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile)
 
-* Mojolicious with Mojo::Pg [8.11-pg, 8-pg, pg (pg/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile)
+* Mojolicious with Mojo::Pg: [8.12-pg, 8-pg, pg (pg/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile)
 
-* Mojolicious with Mojo::SQLite [8.11-sqlite, 8-sqlite, sqlite (sqlite/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/sqlite/Dockerfile)
+* Mojolicious with Mojo::SQLite: [8.12-sqlite, 8-sqlite, sqlite (sqlite/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/sqlite/Dockerfile)
 
 # How to use this image
 

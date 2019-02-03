@@ -23,9 +23,9 @@ All the images come with Mojolicious installed together with
 
 * Mojolicious with Mojo::mysql and DBD::mysql: <%= $mysql->{dockerfile}->{link} %>
 
-* Mojolicious with Mojo::Pg <%= $pg->{dockerfile}->{link} %>
+* Mojolicious with Mojo::Pg: <%= $pg->{dockerfile}->{link} %>
 
-* Mojolicious with Mojo::SQLite <%= $sqlite->{dockerfile}->{link} %>
+* Mojolicious with Mojo::SQLite: <%= $sqlite->{dockerfile}->{link} %>
 
 # How to use this image
 

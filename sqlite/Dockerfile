@@ -16,7 +16,7 @@ RUN set -e; \
 RUN set -e; \
     cpanm Cpanel::JSON::XS DBI EV IO::Socket::Socks IO::Socket::SSL Net::DNS::Native Role::Tiny SQL::Abstract
 
-ENV MOJO_VERSION 8.11
+ENV MOJO_VERSION 8.12
 
 RUN cpanm Mojolicious@"$MOJO_VERSION"
 

@@ -10,7 +10,7 @@ global:
   debian_packages:
     - software-properties-common
     - dirmngr
-  mojo_version: 8.11
+  mojo_version: 8.12
   perl_modules:
     - Cpanel::JSON::XS
     - DBI
@@ -25,7 +25,7 @@ releases:
   main:
     latest: true
     versions:
-      - 8.11
+      - 8.12
       - 8
   mariadb:
     keys:
@@ -40,7 +40,7 @@ releases:
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
     versions:
-      - 8.11-mariadb
+      - 8.12-mariadb
       - 8-mariadb
   mysql:
     keys:
@@ -53,7 +53,7 @@ releases:
     repos:
       - deb http://repo.mysql.com/apt/debian/ stretch mysql-8.0
     versions:
-      - 8.11-mysql
+      - 8.12-mysql
       - 8-mysql
   pg:
     keys:
@@ -66,14 +66,14 @@ releases:
     repos:
       - deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main 11
     versions:
-      - 8.11-pg
+      - 8.12-pg
       - 8-pg
   sqlite:
     perl_modules:
       - DBD::SQLite
       - Mojo::SQLite
     versions:
-      - 8.11-sqlite
+      - 8.12-sqlite
       - 8-sqlite
 
 templates:
