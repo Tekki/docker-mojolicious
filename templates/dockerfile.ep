@@ -1,6 +1,6 @@
 %= $warning
 
-FROM perl:5.28
+FROM <%= $from %>
 
 RUN set -e; \\
     mkdir -p <%= $global->{app_folder} %>; \\

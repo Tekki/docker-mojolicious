@@ -1,5 +1,6 @@
 ---
 docker:
+  from: perl:5.28
   image: tekki/mojolicious
 
 git:
@@ -16,6 +17,7 @@ global:
     - DBI
     - EV
     - IO::Socket::Socks
+    - Net::SSLeay
     - IO::Socket::SSL
     - Net::DNS::Native
     - Role::Tiny
@@ -28,26 +30,30 @@ releases:
       - 8.12
       - 8
   mariadb:
-    keys:
-      - 177F4010FE56CA3336300305F1656F24C74CD1D8
-      - 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A
-      - 4D1BB29D63D98E422B2113B19334A25F8507EFA5
-    keyserver: keyserver.ubuntu.com
-    packages:
-      - libmariadb-dev
+    # keys:
+    #   - 177F4010FE56CA3336300305F1656F24C74CD1D8
+    #   - 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A
+    #   - 4D1BB29D63D98E422B2113B19334A25F8507EFA5
+    # keyserver: keyserver.ubuntu.com
+    # packages:
+    #   - libmariadb-dev
     perl_modules:
       - DBD::MariaDB
-    repos:
-      - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
+      - DBD::mysql
+      - Mojo::mysql
+    # repos:
+    #   - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
     versions:
       - 8.12-mariadb
       - 8-mariadb
   mysql:
     keys:
       - A4A9406876FCBD3C456770C88C718D3B5072E1F5
+    # keyserver: pgp.mit.edu
     packages:
       - libmysqlclient-dev
     perl_modules:
+      - DBD::MariaDB
       - DBD::mysql
       - Mojo::mysql
     repos:

@@ -19,13 +19,16 @@ All the images come with Mojolicious installed together with
 
 * Mojolicious: <%= $main->{dockerfile}->{link} %>
 
-* Mojolicious with DBD::MariaDB (__experimental!__): <%= $mariadb->{dockerfile}->{link} %>
+* Mojolicious with Mojo::mysql and the MariaDB libraries: <%= $mariadb->{dockerfile}->{link} %>
 
-* Mojolicious with Mojo::mysql and DBD::mysql: <%= $mysql->{dockerfile}->{link} %>
+* Mojolicious with Mojo::mysql and the MySQL libraries::mysql: <%= $mysql->{dockerfile}->{link} %>
 
 * Mojolicious with Mojo::Pg: <%= $pg->{dockerfile}->{link} %>
 
 * Mojolicious with Mojo::SQLite: <%= $sqlite->{dockerfile}->{link} %>
+
+`mariadb` and `mysql` both include DBD::MariaDB and DBD::mysql. The difference is
+in the C libraries they are built with.
 
 # How to use this image
 

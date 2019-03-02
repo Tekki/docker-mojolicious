@@ -14,7 +14,7 @@ RUN set -e; \
     && rm -r /var/lib/apt/lists/*
 
 RUN set -e; \
-    cpanm Cpanel::JSON::XS DBI EV IO::Socket::Socks IO::Socket::SSL Net::DNS::Native Role::Tiny SQL::Abstract
+    cpanm Cpanel::JSON::XS DBI EV IO::Socket::Socks Net::SSLeay IO::Socket::SSL Net::DNS::Native Role::Tiny SQL::Abstract
 
 ENV MOJO_VERSION 8.12
 
@@ -37,7 +37,7 @@ RUN set -e; \
     libmysqlclient-dev \
     && rm -r /var/lib/apt/lists/*
 
-RUN cpanm DBD::mysql Mojo::mysql
+RUN cpanm DBD::MariaDB DBD::mysql Mojo::mysql
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
