@@ -21,7 +21,7 @@ All the images come with Mojolicious installed together with
 
 * Mojolicious with Mojo::mysql and the MariaDB libraries: <%= $mariadb->{dockerfile}->{link} %>
 
-* Mojolicious with Mojo::mysql and the MySQL libraries::mysql: <%= $mysql->{dockerfile}->{link} %>
+* Mojolicious with Mojo::mysql and the most recent MySQL libraries: <%= $mysql->{dockerfile}->{link} %>
 
 * Mojolicious with Mojo::Pg: <%= $pg->{dockerfile}->{link} %>
 
