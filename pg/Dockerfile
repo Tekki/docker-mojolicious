@@ -16,14 +16,14 @@ RUN set -e; \
 RUN set -e; \
     cpanm Cpanel::JSON::XS DBI EV IO::Socket::Socks Net::SSLeay IO::Socket::SSL Net::DNS::Native Role::Tiny SQL::Abstract
 
-ENV MOJO_VERSION 8.13
+ENV MOJO_VERSION 8.14
 
 RUN cpanm Mojolicious@"$MOJO_VERSION"
 
 RUN set -e; \
     export GNUPGHOME="$(mktemp -d)"; \
-    gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8"; \
-    gpg --batch --export B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8 > /etc/apt/trusted.gpg.d/pg.gpg; \
+    gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "0x7fcc7d46accc4cf8"; \
+    gpg --batch --export 0x7fcc7d46accc4cf8 > /etc/apt/trusted.gpg.d/pg.gpg; \
     command -v gpgconf > /dev/null && gpgconf --kill all; \
     rm -rf "$GNUPGHOME"; \
     apt-key list
