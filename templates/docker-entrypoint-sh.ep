@@ -1,8 +1,0 @@
-#! /bin/bash
-%= $warning
-
-if [ -f cpanfile ]; then
-  cpanm --installdeps .
-fi
-
-exec "$@"

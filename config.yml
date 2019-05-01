@@ -1,6 +1,6 @@
 ---
 docker:
-  from: perl:5.28
+  from: perl:5.28.2
   image: tekki/mojolicious
 
 git:
@@ -30,27 +30,26 @@ releases:
       - 8.15
       - 8
   mariadb:
-    # keys:
-    #   - 177F4010FE56CA3336300305F1656F24C74CD1D8
-    #   - 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A
-    #   - 4D1BB29D63D98E422B2113B19334A25F8507EFA5
-    # keyserver: keyserver.ubuntu.com
-    # packages:
-    #   - libmariadb-dev
+    env:
+      DBD_MYSQL_CONFIG: mariadb_config
+    keys:
+      - 177F4010FE56CA3336300305F1656F24C74CD1D8
+      - 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A
+      - 4D1BB29D63D98E422B2113B19334A25F8507EFA5
+    packages:
+      - libmariadb-dev
     perl_modules:
       - DBD::MariaDB
       - DBD::mysql
       - Mojo::mysql
-    # repos:
-    #   - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
+    repos:
+      - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
     versions:
       - 8.15-mariadb
       - 8-mariadb
   mysql:
     keys:
-      # - A4A9406876FCBD3C456770C88C718D3B5072E1F5
-      - '0x8c718d3b5072e1f5'
-    # keyserver: pgp.mit.edu
+      - A4A9406876FCBD3C456770C88C718D3B5072E1F5
     packages:
       - libmysqlclient-dev
     perl_modules:
@@ -64,8 +63,7 @@ releases:
       - 8-mysql
   pg:
     keys:
-      # - B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-      - '0x7fcc7d46accc4cf8'
+      - B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
     packages:
       - libpq-dev
     perl_modules:
@@ -87,5 +85,3 @@ releases:
 templates:
   - source: dockerfile.ep
     target: Dockerfile
-  - source: docker-entrypoint-sh.ep
-    target: docker-entrypoint.sh
