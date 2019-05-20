@@ -4,7 +4,7 @@ FROM <%= $from %>
 WORKDIR <%= $global->{app_folder} %>
 EXPOSE 3000 8080
 
-RUN groupadd --gid 1000 perl \
+RUN groupadd --gid 1000 perl \\
   && useradd --uid 1000 --gid perl --shell /bin/bash --create-home perl
 
 RUN set -ex \\
@@ -62,5 +62,4 @@ ENV <%= "$key $release->{env}{$key}" %>
 RUN cpanm <%= join ' ', $release->{perl_modules}->@* %>
 
 % }
-
 CMD ["/bin/bash", "-c"]

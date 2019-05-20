@@ -8,7 +8,8 @@ FROM perl:5.28.2
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
 
-RUN groupadd --gid 1000 perl   && useradd --uid 1000 --gid perl --shell /bin/bash --create-home perl
+RUN groupadd --gid 1000 perl \
+  && useradd --uid 1000 --gid perl --shell /bin/bash --create-home perl
 
 RUN set -ex \
   && apt-get update && apt-get install -y --no-install-recommends \
@@ -26,11 +27,10 @@ RUN set -ex \
     SQL::Abstract \
   && rm -r /var/lib/apt/lists/*
 
-ENV MOJO_VERSION 8.15
+ENV MOJO_VERSION 8.16
 
 RUN cpanm Mojolicious@"$MOJO_VERSION"
 
 RUN cpanm DBD::SQLite Mojo::SQLite
-
 
 CMD ["/bin/bash", "-c"]
