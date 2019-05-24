@@ -27,7 +27,7 @@ RUN set -ex \
     SQL::Abstract \
   && rm -r /var/lib/apt/lists/*
 
-ENV MOJO_VERSION 8.16
+ENV MOJO_VERSION 8.17
 
 RUN cpanm Mojolicious@"$MOJO_VERSION"
 
