@@ -1,6 +1,6 @@
 ---
 docker:
-  from: perl:5.28.2
+  from: perl:5.30.0
   image: tekki/mojolicious
 
 git:
