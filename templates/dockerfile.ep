@@ -16,11 +16,13 @@ RUN set -ex \\
 % for ($global->{perl_modules}->@*) {
     <%= $_ %> \\
 % }
-  && rm -r /var/lib/apt/lists/*
+  && rm -r /var/lib/apt/lists/* \\
+  && rm -r /root/.cpanm
 
 ENV MOJO_VERSION <%= $global->{mojo_version} %>
 
-RUN cpanm Mojolicious@"$MOJO_VERSION"
+RUN cpanm Mojolicious@"$MOJO_VERSION" \\
+  && rm -r /root/.cpanm
 
 % if ($release->{packages}) {
 RUN set -ex \\
@@ -59,7 +61,10 @@ ENV <%= "$key $release->{env}{$key}" %>
 
 % }
 % if ($release->{perl_modules}) {
-RUN cpanm <%= join ' ', $release->{perl_modules}->@* %>
+RUN cpanm <%= join ' ', $release->{perl_modules}->@* %> \\
+  && rm -r /root/.cpanm
 
 % }
+%= $labels
+
 CMD ["/bin/bash", "-c"]

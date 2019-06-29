@@ -25,12 +25,25 @@ RUN set -ex \
     Net::DNS::Native \
     Role::Tiny \
     SQL::Abstract \
-  && rm -r /var/lib/apt/lists/*
+  && rm -r /var/lib/apt/lists/* \
+  && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 8.17
+ENV MOJO_VERSION 8.18
 
-RUN cpanm Mojolicious@"$MOJO_VERSION"
+RUN cpanm Mojolicious@"$MOJO_VERSION" \
+  && rm -r /root/.cpanm
 
-RUN cpanm DBD::SQLite Mojo::SQLite
+RUN cpanm DBD::SQLite Mojo::SQLite \
+  && rm -r /root/.cpanm
+
+LABEL org.opencontainers.image.authors="Tekki <tekki@tekki.ch>"
+LABEL org.opencontainers.image.created=2019-06-29T06:25:32Z
+LABEL org.opencontainers.image.description="Mojolicious is a real-time web framework and web development toolkit written in Perl."
+LABEL org.opencontainers.image.documentation=https://github.com/Tekki/docker-mojolicious/blob/master/README.md
+LABEL org.opencontainers.image.licenses=Artistic-2.0
+LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/sqlite/Dockerfile
+LABEL org.opencontainers.image.title=Mojolicious
+LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
+LABEL org.opencontainers.image.version=8.18-sqlite
 
 CMD ["/bin/bash", "-c"]

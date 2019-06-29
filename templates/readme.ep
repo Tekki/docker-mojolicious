@@ -2,8 +2,7 @@
 
 # What is Mojolicious?
 
-[Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit written
-in [Perl](https://www.perl.org).
+%= $global->{description}
 
 The images are based on <%= $from %> and provide Mojolicious installed together with
 [Cpanel::JSON::XS](https://metacpan.org/pod/Cpanel::JSON::XS),
