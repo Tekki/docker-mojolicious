@@ -13,7 +13,7 @@ global:
     - dirmngr
   description: '[Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit written in [Perl](https://www.perl.org).'
   license: Artistic-2.0
-  mojo_version: 8.18
+  mojo_version: 8.19
   perl_modules:
     - Cpanel::JSON::XS
     - DBI
@@ -28,10 +28,10 @@ global:
 
 releases:
   main:
-    latest: true
     versions:
-      - 8.18
+      - 8.19
       - 8
+      - latest
   mariadb:
     env:
       DBD_MYSQL_CONFIG: mariadb_config
@@ -48,8 +48,9 @@ releases:
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
     versions:
-      - 8.18-mariadb
+      - 8.19-mariadb
       - 8-mariadb
+      - mariadb
   mysql:
     keys:
       - A4A9406876FCBD3C456770C88C718D3B5072E1F5
@@ -62,28 +63,31 @@ releases:
     repos:
       - deb http://repo.mysql.com/apt/debian/ stretch mysql-8.0
     versions:
-      - 8.18-mysql
+      - 8.19-mysql
       - 8-mysql
+      - mysql
   pg:
     keys:
       - B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
     packages:
       - libpq-dev
     perl_modules:
-      - DBD::Pg
+      - DBD::Pg@3.8.0
       - Mojo::Pg
     repos:
       - deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main 11
     versions:
-      - 8.18-pg
+      - 8.19-pg
       - 8-pg
+      - pg
   sqlite:
     perl_modules:
       - DBD::SQLite
       - Mojo::SQLite
     versions:
-      - 8.18-sqlite
+      - 8.19-sqlite
       - 8-sqlite
+      - sqlite
 
 templates:
   - source: dockerfile.ep
