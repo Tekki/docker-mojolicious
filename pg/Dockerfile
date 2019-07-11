@@ -28,7 +28,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 8.19
+ENV MOJO_VERSION 8.20
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -45,7 +45,7 @@ RUN set -ex \
   && gpg --batch --export B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8 > /etc/apt/trusted.gpg.d/pg.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
-  && add-apt-repository 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main 11' \
+  && add-apt-repository 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     libpq-dev \
@@ -63,6 +63,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=8.19-pg
+LABEL org.opencontainers.image.version=8.20-pg
 
 CMD ["/bin/bash", "-c"]
