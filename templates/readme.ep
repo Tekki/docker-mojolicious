@@ -5,14 +5,7 @@
 %= $global->{description}
 
 The images are based on <%= $from %> and provide Mojolicious installed together with
-[Cpanel::JSON::XS](https://metacpan.org/pod/Cpanel::JSON::XS),
-[DBI](https://metacpan.org/pod/DBI),
-[EV](https://metacpan.org/pod/EV),
-[IO::Socket::Socks](https://metacpan.org/pod/IO::Socket::Socks),
-[IO::Socket::SSL](https://metacpan.org/pod/IO::Socket::SSL),
-[Net::DNS::Native](https://metacpan.org/pod/Net::DNS::Native),
-[Role::Tiny](https://metacpan.org/pod/Role::Tiny) and
-[SQL::Abstract](https://metacpan.org/pod/SQL::Abstract).
+%= join(",\n", map {"[$_](https://metacpan.org/pod/$_)"} $global->{perl_modules}->@*) . '.'
 
 # Supported tags and respective Dockerfile links
 
