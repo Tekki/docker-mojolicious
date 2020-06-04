@@ -16,7 +16,7 @@ global:
     [Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit
     written in [Perl](https://www.perl.org).
   license: Artistic-2.0
-  mojo_version: 8.51
+  mojo_version: 8.52
   perl_modules:
     - Cpanel::JSON::XS
     - DBI
@@ -33,7 +33,7 @@ global:
 releases:
   main:
     versions:
-      - 8.51
+      - 8.52
       - 8
       - latest
   mariadb:
@@ -52,7 +52,7 @@ releases:
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
     versions:
-      - 8.51-mariadb
+      - 8.52-mariadb
       - 8-mariadb
       - mariadb
   mysql:
@@ -67,7 +67,7 @@ releases:
     repos:
       - deb http://repo.mysql.com/apt/debian/ stretch mysql-8.0
     versions:
-      - 8.51-mysql
+      - 8.52-mysql
       - 8-mysql
       - mysql
   pg:
@@ -76,12 +76,12 @@ releases:
     packages:
       - libpq-dev
     perl_modules:
-      - DBD::Pg
+      - DBD::Pg@3.12.0
       - Mojo::Pg
     repos:
       - deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main
     versions:
-      - 8.51-pg
+      - 8.52-pg
       - 8-pg
       - pg
   sqlite:
@@ -89,7 +89,7 @@ releases:
       - DBD::SQLite
       - Mojo::SQLite
     versions:
-      - 8.51-sqlite
+      - 8.52-sqlite
       - 8-sqlite
       - sqlite
 
