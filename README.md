@@ -5,7 +5,7 @@
 [Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit written in [Perl](https://www.perl.org).
 
 
-The images are based on perl:5.30.2 and provide Mojolicious installed together with
+The images are based on perl:5.30.3 and provide Mojolicious installed together with
 [Cpanel::JSON::XS](https://metacpan.org/pod/Cpanel::JSON::XS),
 [DBI](https://metacpan.org/pod/DBI),
 [EV](https://metacpan.org/pod/EV),

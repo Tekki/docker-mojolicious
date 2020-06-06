@@ -1,7 +1,7 @@
 ---
 docker:
   buildkit: true
-  from: perl:5.30.2
+  from: perl:5.30.3
   image: tekki/mojolicious
 
 git:
@@ -76,7 +76,7 @@ releases:
     packages:
       - libpq-dev
     perl_modules:
-      - DBD::Pg@3.12.0
+      - DBD::Pg
       - Mojo::Pg
     repos:
       - deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main

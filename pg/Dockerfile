@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM perl:5.30.2
+FROM perl:5.30.3
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
@@ -52,7 +52,7 @@ RUN set -ex \
     libpq-dev \
   && rm -r /var/lib/apt/lists/*
 
-RUN cpanm DBD::Pg@3.12.0 Mojo::Pg \
+RUN cpanm DBD::Pg Mojo::Pg \
   && rm -r /root/.cpanm
 
 ARG NOW=not-set

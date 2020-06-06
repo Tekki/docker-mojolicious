@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM perl:5.30.2
+FROM perl:5.30.3
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
