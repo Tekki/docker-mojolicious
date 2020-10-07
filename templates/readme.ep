@@ -48,3 +48,7 @@ The application inside the container always has to run in the foreground. For
 hypnotoad use the `-f` flag.
 
     $ docker container run -d --rm -v "$(pwd):/usr/src/app" -p 8080:8080 tekki/mojolicious hypnotoad -f script/my_app
+
+## Source
+
+The source of this image on [GitHub](https://github.com/Tekki/docker-mojolicious)
