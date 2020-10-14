@@ -27,9 +27,9 @@ is in the C libraries they are built with.
 ## Simple application
 
 Go to your code folder, call Mojolicious to create the basic application
-structure.
+structure with you as the owner.
 
-    $ docker container run --rm -v "$(pwd):/usr/src/app" tekki/mojolicious mojo generate app MyApp
+    $ docker container run --rm -u $UID -v "$(pwd):/usr/src/app" tekki/mojolicious mojo generate app MyApp
 
 Start the application as daemon.
 
@@ -49,6 +49,6 @@ hypnotoad use the `-f` flag.
 
     $ docker container run -d --rm -v "$(pwd):/usr/src/app" -p 8080:8080 tekki/mojolicious hypnotoad -f script/my_app
 
-## Source
+# Source
 
 The source of this image on [GitHub](https://github.com/Tekki/docker-mojolicious)
