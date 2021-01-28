@@ -5,7 +5,7 @@
 [Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit written in [Perl](https://www.perl.org).
 
 
-The images are based on perl:5.32.0 and provide Mojolicious installed together with
+The images are based on perl:5.32.1 and provide Mojolicious installed together with
 [Cpanel::JSON::XS](https://metacpan.org/pod/Cpanel::JSON::XS),
 [DBI](https://metacpan.org/pod/DBI),
 [EV](https://metacpan.org/pod/EV),
@@ -19,15 +19,15 @@ The images are based on perl:5.32.0 and provide Mojolicious installed together w
 
 # Supported tags and respective Dockerfile links
 
-* Mojolicious: [8.71, 8, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile)
+* Mojolicious: [8.72, 8, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile)
 
-* Mojolicious with Mojo::mysql and the MariaDB libraries: [8.71-mariadb, 8-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile)
+* Mojolicious with Mojo::mysql and the MariaDB libraries: [8.72-mariadb, 8-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile)
 
-* Mojolicious with Mojo::mysql and the MySQL libraries: [8.71-mysql, 8-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile)
+* Mojolicious with Mojo::mysql and the MySQL libraries: [8.72-mysql, 8-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile)
 
-* Mojolicious with Mojo::Pg: [8.71-pg, 8-pg, pg (pg/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile)
+* Mojolicious with Mojo::Pg: [8.72-pg, 8-pg, pg (pg/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile)
 
-* Mojolicious with Mojo::SQLite: [8.71-sqlite, 8-sqlite, sqlite (sqlite/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/sqlite/Dockerfile)
+* Mojolicious with Mojo::SQLite: [8.72-sqlite, 8-sqlite, sqlite (sqlite/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/sqlite/Dockerfile)
 
 `mariadb` and `mysql` both include DBD::MariaDB and DBD::mysql. The difference
 is in the C libraries they are built with.

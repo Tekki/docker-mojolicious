@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM perl:5.32.0
+FROM perl:5.32.1
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
@@ -29,7 +29,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 8.71
+ENV MOJO_VERSION 8.72
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -64,6 +64,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=8.71-pg
+LABEL org.opencontainers.image.version=8.72-pg
 
 CMD ["/bin/bash", "-c"]
