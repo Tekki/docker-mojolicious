@@ -84,14 +84,14 @@ releases:
       - 9.0-pg
       - 9-pg
       - pg
-  # sqlite:
-  #   perl_modules:
-  #     - DBD::SQLite
-  #     - Mojo::SQLite
-  #   versions:
-  #     - 9.0-sqlite
-  #     - 9-sqlite
-  #     - sqlite
+  sqlite:
+    perl_modules:
+      - DBD::SQLite
+      - Mojo::SQLite
+    versions:
+      - 9.0-sqlite
+      - 9-sqlite
+      - sqlite
 
 templates:
   - source: dockerfile.ep
