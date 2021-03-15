@@ -29,7 +29,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 9.08
+ENV MOJO_VERSION 9.09
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -64,6 +64,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.08-mysql
+LABEL org.opencontainers.image.version=9.09-mysql
 
 CMD ["/bin/bash", "-c"]
