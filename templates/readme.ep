@@ -44,10 +44,10 @@ Browse to [localhost:3000](http://localhost:3000) and edit the code in the
 current folder. If you are on Linux or MacOS, the server will restart whenever
 you change a file. On Windows this works if you use Docker Desktop with WSL 2.
 
-The application inside the container always has to run in the foreground. For
-hypnotoad use the `-f` flag.
+To switch from development to production an run the application as daemon in
+the full featured non-blocking web server start it with
 
-    $ docker container run -d --rm -v "$(pwd):/usr/src/app" -p 8080:8080 tekki/mojolicious hypnotoad -f script/my_app
+    $ docker container run -d --rm -v "$(pwd):/usr/src/app" -p 3000:3000 tekki/mojolicious script/my_app prefork
 
 # Source
 
