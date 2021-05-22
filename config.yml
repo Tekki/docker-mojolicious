@@ -1,7 +1,7 @@
 ---
 docker:
   buildkit: true
-  from: perl:5.32.1
+  from: perl:5.34.0
   image: tekki/mojolicious
 
 git:
