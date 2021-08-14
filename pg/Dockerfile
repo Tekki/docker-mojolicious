@@ -29,7 +29,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 9.20
+ENV MOJO_VERSION 9.21
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -41,7 +41,8 @@ RUN set -ex \
   ; do \
     gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
     gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
-    gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ; \
+    gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" || \
+    gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ; \
   done \
   && gpg --batch --export B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8 > /etc/apt/trusted.gpg.d/pg.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
@@ -64,6 +65,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.20-pg
+LABEL org.opencontainers.image.version=9.21-pg
 
 CMD ["/bin/bash", "-c"]

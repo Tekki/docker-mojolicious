@@ -35,7 +35,8 @@ RUN set -ex \\
   ; do \\
     gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \\
     gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \\
-    gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ; \\
+    gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" || \\
+    gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ; \\
   done \\
   && gpg --batch --export <%= join ' ', $release->{keys}->@* %> > /etc/apt/trusted.gpg.d/<%= $release_name %>.gpg \\
   && command -v gpgconf > /dev/null && gpgconf --kill all \\
