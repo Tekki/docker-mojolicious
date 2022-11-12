@@ -29,7 +29,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 9.28
+ENV MOJO_VERSION 9.29
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -41,8 +41,8 @@ RUN set -ex \
     430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A \
     4D1BB29D63D98E422B2113B19334A25F8507EFA5 \
   ; do \
-    gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
-    gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
+    # gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
+    # gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" || \
     gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ; \
   done \
@@ -69,6 +69,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.28-mariadb
+LABEL org.opencontainers.image.version=9.29-mariadb
 
 CMD ["/bin/bash", "-c"]
