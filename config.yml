@@ -1,7 +1,7 @@
 ---
 docker:
   buildkit: true
-  from: perl:5.36.0
+  from: perl:5.36.1
   image: tekki/mojolicious
 
 git:
@@ -16,7 +16,7 @@ global:
     [Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit
     written in [Perl](https://www.perl.org).
   license: Artistic-2.0
-  mojo_version: 9.31
+  mojo_version: 9.32
   perl_modules:
     - Cpanel::JSON::XS
     - DBI
@@ -33,7 +33,7 @@ global:
 releases:
   main:
     versions:
-      - 9.31
+      - 9.32
       - 9
       - latest
   mariadb:
@@ -52,7 +52,7 @@ releases:
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
     versions:
-      - 9.31-mariadb
+      - 9.32-mariadb
       - 9-mariadb
       - mariadb
   mysql:
@@ -67,7 +67,7 @@ releases:
     repos:
       - deb http://repo.mysql.com/apt/debian/ buster mysql-8.0
     versions:
-      - 9.31-mysql
+      - 9.32-mysql
       - 9-mysql
       - mysql
   pg:
@@ -81,7 +81,7 @@ releases:
     repos:
       - deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
     versions:
-      - 9.31-pg
+      - 9.32-pg
       - 9-pg
       - pg
   sqlite:
@@ -89,7 +89,7 @@ releases:
       - DBD::SQLite
       - Mojo::SQLite
     versions:
-      - 9.31-sqlite
+      - 9.32-sqlite
       - 9-sqlite
       - sqlite
 
