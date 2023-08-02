@@ -13,7 +13,7 @@ The images are based on <%= $from %> and provide Mojolicious installed together 
 
 * Mojolicious with Mojo::mysql and the MariaDB libraries: <%= $mariadb->{dockerfile}->{link} %>
 
-* Mojolicious with Mojo::mysql and the MySQL libraries: <%= $mysql->{dockerfile}->{link} %>
+* Mojolicious with Mojo::mysql and the MySQL libraries ¹
 
 * Mojolicious with Mojo::Pg: <%= $pg->{dockerfile}->{link} %>
 
@@ -21,6 +21,9 @@ The images are based on <%= $from %> and provide Mojolicious installed together 
 
 `mariadb` and `mysql` both include DBD::MariaDB and DBD::mysql. The difference
 is in the C libraries they are built with.
+
+¹ For the moment the `mysql` tag is not updated because the libraries
+don't compile on Debian Bookworm.
 
 # How to use this image
 

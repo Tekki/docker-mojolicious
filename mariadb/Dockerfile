@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM perl:5.36.1
+FROM perl:5.38.0
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
@@ -49,7 +49,7 @@ RUN set -ex \
   && gpg --batch --export 177F4010FE56CA3336300305F1656F24C74CD1D8 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 4D1BB29D63D98E422B2113B19334A25F8507EFA5 > /etc/apt/trusted.gpg.d/mariadb.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
-  && add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main' \
+  && add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/10.5/debian bullseye main' \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     libmariadb-dev \

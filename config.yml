@@ -1,7 +1,7 @@
 ---
 docker:
   buildkit: true
-  from: perl:5.36.1
+  from: perl:5.38.0
   image: tekki/mojolicious
 
 git:
@@ -50,26 +50,26 @@ releases:
       - DBD::mysql
       - Mojo::mysql
     repos:
-      - deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian stretch main
+      - deb http://ftp.osuosl.org/pub/mariadb/repo/10.5/debian bullseye main
     versions:
       - 9.33-mariadb
       - 9-mariadb
       - mariadb
-  mysql:
-    keys:
-      - 467B942D3A79BD29
-    packages:
-      - libmysqlclient-dev
-    perl_modules:
-      - DBD::MariaDB
-      - DBD::mysql
-      - Mojo::mysql
-    repos:
-      - deb http://repo.mysql.com/apt/debian/ buster mysql-8.0
-    versions:
-      - 9.33-mysql
-      - 9-mysql
-      - mysql
+  # mysql:
+  #   keys:
+  #     - 467B942D3A79BD29
+  #   packages:
+  #     - libmysqlclient-dev
+  #   perl_modules:
+  #     - DBD::MariaDB
+  #     - DBD::mysql
+  #     - Mojo::mysql
+  #   repos:
+  #     - deb http://repo.mysql.com/apt/debian bullseye mysql-8.0
+  #   versions:
+  #     - 9.33-mysql
+  #     - 9-mysql
+  #     - mysql
   pg:
     keys:
       - B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
