@@ -29,7 +29,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 9.34
+ENV MOJO_VERSION 9.35
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -49,7 +49,7 @@ RUN set -ex \
   && gpg --batch --export 177F4010FE56CA3336300305F1656F24C74CD1D8 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 4D1BB29D63D98E422B2113B19334A25F8507EFA5 > /etc/apt/trusted.gpg.d/mariadb.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
-  && add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/10.5/debian bullseye main' \
+  && add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/11.1/debian bookworm main' \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     libmariadb-dev \
@@ -57,7 +57,7 @@ RUN set -ex \
 
 ENV DBD_MYSQL_CONFIG mariadb_config
 
-RUN cpanm DBD::MariaDB DBD::mysql Mojo::mysql \
+RUN cpanm DBD::MariaDB Mojo::mysql \
   && rm -r /root/.cpanm
 
 ARG NOW=not-set
@@ -69,6 +69,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.34-mariadb
+LABEL org.opencontainers.image.version=9.35-mariadb
 
 CMD ["/bin/bash", "-c"]

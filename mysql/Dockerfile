@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM perl:5.36.1
+FROM perl:5.38.0
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
@@ -29,7 +29,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 9.33
+ENV MOJO_VERSION 9.35
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -47,7 +47,7 @@ RUN set -ex \
   && gpg --batch --export 467B942D3A79BD29 > /etc/apt/trusted.gpg.d/mysql.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
-  && add-apt-repository 'deb http://repo.mysql.com/apt/debian/ buster mysql-8.0' \
+  && add-apt-repository 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     libmysqlclient-dev \
@@ -65,6 +65,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.33-mysql
+LABEL org.opencontainers.image.version=9.35-mysql
 
 CMD ["/bin/bash", "-c"]

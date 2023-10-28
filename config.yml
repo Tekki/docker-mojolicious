@@ -16,7 +16,7 @@ global:
     [Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit
     written in [Perl](https://www.perl.org).
   license: Artistic-2.0
-  mojo_version: 9.34
+  mojo_version: 9.35
   perl_modules:
     - Cpanel::JSON::XS
     - DBI
@@ -33,7 +33,7 @@ global:
 releases:
   main:
     versions:
-      - 9.34
+      - 9.35
       - 9
       - latest
   mariadb:
@@ -47,12 +47,12 @@ releases:
       - libmariadb-dev
     perl_modules:
       - DBD::MariaDB
-      - DBD::mysql
+      # - DBD::mysql
       - Mojo::mysql
     repos:
-      - deb http://ftp.osuosl.org/pub/mariadb/repo/10.5/debian bullseye main
+      - deb http://ftp.osuosl.org/pub/mariadb/repo/11.1/debian bookworm main
     versions:
-      - 9.34-mariadb
+      - 9.35-mariadb
       - 9-mariadb
       - mariadb
   # mysql:
@@ -65,9 +65,9 @@ releases:
   #     - DBD::mysql
   #     - Mojo::mysql
   #   repos:
-  #     - deb http://repo.mysql.com/apt/debian bullseye mysql-8.0
+  #     - deb http://repo.mysql.com/apt/debian bookworm mysql-8.0
   #   versions:
-  #     - 9.34-mysql
+  #     - 9.35-mysql
   #     - 9-mysql
   #     - mysql
   pg:
@@ -79,9 +79,9 @@ releases:
       - DBD::Pg
       - Mojo::Pg
     repos:
-      - deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
+      - deb http://apt.postgresql.org/pub/repos/apt/ bookworm-pgdg main
     versions:
-      - 9.34-pg
+      - 9.35-pg
       - 9-pg
       - pg
   sqlite:
@@ -89,7 +89,7 @@ releases:
       - DBD::SQLite
       - Mojo::SQLite
     versions:
-      - 9.34-sqlite
+      - 9.35-sqlite
       - 9-sqlite
       - sqlite
 
