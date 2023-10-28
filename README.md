@@ -23,7 +23,7 @@ The images are based on perl:5.38.0 and provide Mojolicious installed together w
 
 * Mojolicious with Mojo::mysql and the MariaDB libraries: [9.35-mariadb, 9-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile)
 
-* Mojolicious with Mojo::mysql and the MySQL libraries ¹
+* Mojolicious with Mojo::mysql and the MySQL libraries: [9.35-mysql, 9-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile)
 
 * Mojolicious with Mojo::Pg: [9.35-pg, 9-pg, pg (pg/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile)
 
@@ -31,9 +31,6 @@ The images are based on perl:5.38.0 and provide Mojolicious installed together w
 
 `mariadb` and `mysql` both include DBD::MariaDB and DBD::mysql. The difference
 is in the C libraries they are built with.
-
-¹ For the moment the `mysql` tag is not updated because the libraries
-don't compile on Debian Bookworm.
 
 # How to use this image
 

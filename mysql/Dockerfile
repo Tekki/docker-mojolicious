@@ -48,6 +48,7 @@ RUN set -ex \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
   && add-apt-repository 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' \
+  && add-apt-repository 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     libmysqlclient-dev \
