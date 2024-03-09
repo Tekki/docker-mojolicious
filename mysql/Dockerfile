@@ -29,7 +29,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION 9.35
+ENV MOJO_VERSION 9.36
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -37,14 +37,13 @@ RUN cpanm Mojolicious@"$MOJO_VERSION" \
 RUN set -ex \
   && export GNUPGHOME="$(mktemp -d)" \
   && for key in \
-    467B942D3A79BD29 \
+    A8D3785C \
   ; do \
-    # gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
-    # gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
+    gpg --batch --keyserver hkp://keys.opengpg.org --recv-keys "$key" || \
     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" || \
     gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ; \
   done \
-  && gpg --batch --export 467B942D3A79BD29 > /etc/apt/trusted.gpg.d/mysql.gpg \
+  && gpg --batch --export A8D3785C > /etc/apt/trusted.gpg.d/mysql.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
   && add-apt-repository 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' \
@@ -66,6 +65,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.35-mysql
+LABEL org.opencontainers.image.version=9.36-mysql
 
 CMD ["/bin/bash", "-c"]
