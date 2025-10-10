@@ -1,7 +1,7 @@
 ---
 docker:
   buildkit: true
-  from: perl:5.40.2
+  from: perl:5.42.0-bookworm
   image: tekki/mojolicious
 
 git:
@@ -16,12 +16,12 @@ global:
     [Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit
     written in [Perl](https://www.perl.org).
   license: Artistic-2.0
-  mojo_version: 9.41
+  mojo_version: 9.42
   perl_modules:
     - Cpanel::JSON::XS
     - CryptX
     - DBI
-    - EV
+    # - EV
     - Future::AsyncAwait
     - IO::Socket::Socks
     - Net::SSLeay
@@ -34,7 +34,7 @@ global:
 releases:
   main:
     versions:
-      - 9.41
+      - 9.42
       - 9
       - latest
   mariadb:
@@ -53,7 +53,7 @@ releases:
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/11.1/debian bookworm main
     versions:
-      - 9.41-mariadb
+      - 9.42-mariadb
       - 9-mariadb
       - mariadb
   mysql:
@@ -69,7 +69,7 @@ releases:
       - deb http://repo.mysql.com/apt/debian bookworm mysql-8.0
       - deb http://repo.mysql.com/apt/debian bookworm mysql-8.0
     versions:
-      - 9.41-mysql
+      - 9.42-mysql
       - 9-mysql
       - mysql
   pg:
@@ -83,7 +83,7 @@ releases:
     repos:
       - deb http://apt.postgresql.org/pub/repos/apt/ bookworm-pgdg main
     versions:
-      - 9.41-pg
+      - 9.42-pg
       - 9-pg
       - pg
   sqlite:
@@ -91,7 +91,7 @@ releases:
       - DBD::SQLite
       - Mojo::SQLite
     versions:
-      - 9.41-sqlite
+      - 9.42-sqlite
       - 9-sqlite
       - sqlite
 
