@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM perl:5.42.0-bookworm
+FROM perl:5.42.2-trixie
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
@@ -13,7 +13,6 @@ RUN groupadd --gid 1000 perl \
 
 RUN set -ex \
   && apt-get update && apt-get install -y --no-install-recommends \
-    software-properties-common \
     dirmngr \
   && cpanm \
     Cpanel::JSON::XS \
@@ -29,7 +28,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION=9.42
+ENV MOJO_VERSION=9.43
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -46,8 +45,8 @@ RUN set -ex \
   && gpg --batch --export A8D3785C > /etc/apt/trusted.gpg.d/mysql.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
-  && add-apt-repository 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' \
-  && add-apt-repository 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' \
+  && echo 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' > /etc/apt/sources.list.d/additional.list \
+  && echo 'deb http://repo.mysql.com/apt/debian bookworm mysql-8.0' > /etc/apt/sources.list.d/additional.list \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     libmysqlclient-dev \
@@ -65,6 +64,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.42-mysql
+LABEL org.opencontainers.image.version=9.43-mysql
 
 CMD ["/bin/bash", "-c"]

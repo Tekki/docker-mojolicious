@@ -43,7 +43,7 @@ RUN set -ex \\
 % }
 % if ($release->{repos}) {
 %   for my $repo ($release->{repos}->@*) {
-  && add-apt-repository '<%= $repo %>' \\
+  && echo '<%= $repo %>' > /etc/apt/sources.list.d/additional.list \\
 %   }
 % }
   && apt-get update \\

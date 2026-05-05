@@ -3,7 +3,7 @@
 #
 # do not edit it directly
 #
-FROM perl:5.42.0-bookworm
+FROM perl:5.42.2-trixie
 
 WORKDIR /usr/src/app
 EXPOSE 3000 8080
@@ -13,7 +13,6 @@ RUN groupadd --gid 1000 perl \
 
 RUN set -ex \
   && apt-get update && apt-get install -y --no-install-recommends \
-    software-properties-common \
     dirmngr \
   && cpanm \
     Cpanel::JSON::XS \
@@ -29,7 +28,7 @@ RUN set -ex \
   && rm -r /var/lib/apt/lists/* \
   && rm -r /root/.cpanm
 
-ENV MOJO_VERSION=9.42
+ENV MOJO_VERSION=9.43
 
 RUN cpanm Mojolicious@"$MOJO_VERSION" \
   && rm -r /root/.cpanm
@@ -48,7 +47,7 @@ RUN set -ex \
   && gpg --batch --export 177F4010FE56CA3336300305F1656F24C74CD1D8 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 4D1BB29D63D98E422B2113B19334A25F8507EFA5 > /etc/apt/trusted.gpg.d/mariadb.gpg \
   && command -v gpgconf > /dev/null && gpgconf --kill all \
   && rm -rf "$GNUPGHOME" \
-  && add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/11.1/debian bookworm main' \
+  && echo 'deb http://ftp.osuosl.org/pub/mariadb/repo/12.3/debian trixie main' > /etc/apt/sources.list.d/additional.list \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     libmariadb-dev \
@@ -68,6 +67,6 @@ LABEL org.opencontainers.image.licenses=Artistic-2.0
 LABEL org.opencontainers.image.source=https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile
 LABEL org.opencontainers.image.title=Mojolicious
 LABEL org.opencontainers.image.url=https://github.com/Tekki/docker-mojolicious
-LABEL org.opencontainers.image.version=9.42-mariadb
+LABEL org.opencontainers.image.version=9.43-mariadb
 
 CMD ["/bin/bash", "-c"]
