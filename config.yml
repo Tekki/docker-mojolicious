@@ -16,7 +16,7 @@ global:
     [Mojolicious](https://mojolicious.org) is a real-time web framework and web development toolkit
     written in [Perl](https://www.perl.org).
   license: Artistic-2.0
-  mojo_version: 9.43
+  mojo_version: 9.45
   perl_modules:
     - Cpanel::JSON::XS
     - CryptX
@@ -34,7 +34,7 @@ global:
 releases:
   main:
     versions:
-      - 9.43
+      - 9.45
       - 9
       - latest
   mariadb:
@@ -53,7 +53,7 @@ releases:
     repos:
       - deb http://ftp.osuosl.org/pub/mariadb/repo/12.3/debian trixie main
     versions:
-      - 9.43-mariadb
+      - 9.45-mariadb
       - 9-mariadb
       - mariadb
   mysql:
@@ -69,7 +69,7 @@ releases:
       - deb http://repo.mysql.com/apt/debian bookworm mysql-8.0
       - deb http://repo.mysql.com/apt/debian bookworm mysql-8.0
     versions:
-      - 9.43-mysql
+      - 9.45-mysql
       - 9-mysql
       - mysql
   pg:
@@ -83,7 +83,7 @@ releases:
     repos:
       - deb http://apt.postgresql.org/pub/repos/apt/ trixie-pgdg main
     versions:
-      - 9.43-pg
+      - 9.45-pg
       - 9-pg
       - pg
   sqlite:
@@ -91,7 +91,7 @@ releases:
       - DBD::SQLite
       - Mojo::SQLite
     versions:
-      - 9.43-sqlite
+      - 9.45-sqlite
       - 9-sqlite
       - sqlite
 

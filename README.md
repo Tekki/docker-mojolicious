@@ -19,15 +19,15 @@ The images are based on perl:5.42.2-trixie and provide Mojolicious installed tog
 
 # Supported tags and respective Dockerfile links
 
-* Mojolicious: [9.43, 9, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile)
+* Mojolicious: [9.45, 9, latest (main/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/main/Dockerfile)
 
-* Mojolicious with Mojo::mysql and the MariaDB libraries: [9.43-mariadb, 9-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile)
+* Mojolicious with Mojo::mysql and the MariaDB libraries: [9.45-mariadb, 9-mariadb, mariadb (mariadb/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mariadb/Dockerfile)
 
-* Mojolicious with Mojo::mysql and the MySQL libraries: [9.43-mysql, 9-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile)
+* Mojolicious with Mojo::mysql and the MySQL libraries: [9.45-mysql, 9-mysql, mysql (mysql/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/mysql/Dockerfile)
 
-* Mojolicious with Mojo::Pg: [9.43-pg, 9-pg, pg (pg/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile)
+* Mojolicious with Mojo::Pg: [9.45-pg, 9-pg, pg (pg/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/pg/Dockerfile)
 
-* Mojolicious with Mojo::SQLite: [9.43-sqlite, 9-sqlite, sqlite (sqlite/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/sqlite/Dockerfile)
+* Mojolicious with Mojo::SQLite: [9.45-sqlite, 9-sqlite, sqlite (sqlite/Dockerfile)](https://github.com/Tekki/docker-mojolicious/blob/master/sqlite/Dockerfile)
 
 `mariadb` and `mysql` both include DBD::MariaDB and DBD::mysql. The difference
 is in the C libraries they are built with.
