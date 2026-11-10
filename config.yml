@@ -24,6 +24,7 @@ global:
     # - EV
     - Future::AsyncAwait
     - IO::Socket::Socks
+    - MCP
     - Net::SSLeay
     - IO::Socket::SSL
     - Net::DNS::Native
